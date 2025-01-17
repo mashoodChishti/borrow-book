@@ -10,7 +10,10 @@ export const workflowClient = new WorkflowClient({
   token: qstashToken,
 });
 
-const qstashClient = new QstashClient({ token: qstashToken });
+const qstashClient = new QstashClient({
+  token: qstashToken,
+  baseUrl: qstashUrl,
+});
 
 export const sendEmail = async ({
   to,
