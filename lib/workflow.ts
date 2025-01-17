@@ -12,7 +12,6 @@ export const workflowClient = new WorkflowClient({
 
 const qstashClient = new QstashClient({
   token: qstashToken,
-  baseUrl: qstashUrl,
 });
 
 export const sendEmail = async ({
@@ -30,7 +29,7 @@ export const sendEmail = async ({
       provider: resend({ token: resendToken }),
     },
     body: {
-      from: "BorrowBook <updates.mashoodchishti.com>",
+      from: "BorrowBook <hello@mashoodchishti.com>",
       to: [to],
       subject,
       html,
