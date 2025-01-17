@@ -14,9 +14,7 @@ const config = {
       qstashUrl: process.env.UPSTASH_QSTASH_URL!,
       qstashToken: process.env.UPSTASH_QSTASH_TOKEN!,
     },
-    resend: {
-      resendToken: process.env.RESEND_API_KEY!,
-    },
+    resendToken: process.env.RESEND_API_KEY!,
   },
 };
 
