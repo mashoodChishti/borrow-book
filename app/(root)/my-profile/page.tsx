@@ -1,22 +1,13 @@
 import BookList from "@/components/BookList";
-import { Button } from "@/components/ui/button";
-import { sampleBooks } from "@/constants";
-import { signOut } from "@/auth";
 import React from "react";
+import { db } from "@/database/drizzle";
+import { books } from "@/database/schema";
 
-const MyProfile = () => {
+const MyProfile = async () => {
+  const booksList = (await db.select().from(books)) as Book[];
   return (
     <>
-      <form
-        action={async () => {
-          "use server";
-          await signOut();
-        }}
-        className="mb-10"
-      >
-        <Button>Logout</Button>
-      </form>
-      <BookList title="Borrowed Books" books={sampleBooks} />
+      <BookList title="Borrowed Books" books={booksList} />
     </>
   );
 };
